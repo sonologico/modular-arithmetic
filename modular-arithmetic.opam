@@ -1,0 +1,15 @@
+opam-version: "1.2"
+name: "modular-arithmetic"
+version: "0.1"
+maintainer: "Raphael Sousa Santos <contact@raphaelss.com>"
+authors: "Raphael Sousa Santos <contact@raphaelss.com>"
+license: "MPL-2.0"
+homepage: "github.com/sonologico/modular-arithmetic"
+build: [
+  [make]
+]
+install: [make "install"]
+remove: ["ocamlfind" "remove" "modular-arithmetic"]
+depends: [
+  "ocamlfind" {build}
+]

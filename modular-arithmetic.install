@@ -1,0 +1,16 @@
+lib: [
+  "_build/install/default/lib/modular-arithmetic/META" {"META"}
+  "_build/install/default/lib/modular-arithmetic/opam" {"opam"}
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cmi"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cmx"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cmt"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.ml"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cma"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cmxa"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.a"
+  "_build/install/default/lib/modular-arithmetic/mod_arith.cmxs"
+]
+doc: [
+  "_build/install/default/doc/modular-arithmetic/README.adoc"
+  "_build/install/default/doc/modular-arithmetic/LICENSE.txt"
+]

@@ -1,0 +1,11 @@
+B ../_build/default/src/.mod_arith.objs
+B ../_build/default/test/.test.eobjs
+B /home/raphael/.opam/4.05.0/lib/bytes
+B /home/raphael/.opam/4.05.0/lib/oUnit
+B /home/raphael/.opam/4.05.0/lib/ocaml
+FLG -w -40
+S .
+S ../src
+S /home/raphael/.opam/4.05.0/lib/bytes
+S /home/raphael/.opam/4.05.0/lib/oUnit
+S /home/raphael/.opam/4.05.0/lib/ocaml
