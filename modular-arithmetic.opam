@@ -7,11 +7,9 @@ license: "MPL-2.0"
 homepage: "https://github.com/sonologico/modular-arithmetic"
 bug-reports: "https://github.com/sonologico/modular-arithmetic/issues"
 dev-repo: "git+https://github.com/sonologico/modular-arithmetic.git"
-build: [
-  [make]
-]
-install: [make "install"]
-remove: ["ocamlfind" "remove" "modular-arithmetic"]
+build: [["jbuilder" "build" "-p" name "-j" jobs]]
+build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
 depends: [
-  "ocamlfind" {build}
+  "jbuilder" {build}
+  "ounit" {test}
 ]
