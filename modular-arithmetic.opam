@@ -9,6 +9,7 @@ bug-reports: "https://github.com/sonologico/modular-arithmetic/issues"
 dev-repo: "git+https://github.com/sonologico/modular-arithmetic.git"
 build: [["jbuilder" "build" "-p" name "-j" jobs]]
 build-test: [["jbuilder" "runtest" "-p" name "-j" jobs]]
+available: [ocaml-version >= "4.05"]
 depends: [
   "jbuilder" {build}
   "ounit" {test}
