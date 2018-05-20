@@ -1,7 +1,7 @@
 (*
  * modular-arithmetic
  *
- * An ocaml library for operations on integer modulo some integer (the modulus)
+ * An ocaml library for operations on integers modulo some integer (the modulus)
  *
  * Copyright (c) 2018, Raphael Sousa Santos <contact@raphaelss.com>
  *

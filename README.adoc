@@ -1,6 +1,6 @@
 = modular-arithmetic =
 
- An ocaml library for operations on integer modulo some integer (the modulus)
+ An ocaml library for operations on integers modulo some integer (the modulus)
 
 == Installation ==
 
