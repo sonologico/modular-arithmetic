@@ -86,111 +86,79 @@ end
 module Make (M : Modulus) : Mod_int = struct
   type t = int
 
-  let equal a b =
-    a = b
+  let equal a b = a = b
 
-  let compare a b =
-    compare a b
+  let compare a b = compare a b
 
-  let rec of_int x =
-    if x < 0 then
-      of_int (x + M.modulus)
-    else
-      x mod M.modulus
+  let rec of_int x = if x < 0 then of_int (x + M.modulus) else x mod M.modulus
 
-  let to_int x =
-    x
+  let to_int x = x
 
-  let of_string s =
-    of_int (int_of_string s)
+  let of_string s = of_int (int_of_string s)
 
   let of_string_opt s =
-    match int_of_string_opt s with
-    | None -> None
-    | Some x -> Some (of_int x)
+    match int_of_string_opt s with None -> None | Some x -> Some (of_int x)
 
-  let to_string x =
-    string_of_int x
+  let to_string x = string_of_int x
 
-  let of_float x =
-    of_int (int_of_float x)
+  let of_float x = of_int (int_of_float x)
 
-  let to_float =
-    float_of_int
+  let to_float = float_of_int
 
-  let zero =
-    of_int 0
+  let zero = of_int 0
 
-  let one =
-    of_int 1
+  let one = of_int 1
 
-  let minus_one =
-    of_int (-1)
+  let minus_one = of_int (-1)
 
-  let modulus =
-    M.modulus
+  let modulus = M.modulus
 
-  let min_int =
-    zero
+  let min_int = zero
 
-  let max_int =
-    minus_one
+  let max_int = minus_one
 
-  let min a b =
-    if a < b then a else b
+  let min a b = if a < b then a else b
 
-  let max a b =
-    if a > b then a else b
+  let max a b = if a > b then a else b
 
   let mul_inv x =
     let rec loop n = function
       | 0 -> raise (No_mul_inverse (x, modulus))
       | 1 -> (0, 1)
       | x ->
-        let quot = n / x in
-        let rem = n mod x in
-        let (quot', rem') = loop x rem in
-        (rem', quot' - rem' * quot)
+          let quot = n / x in
+          let rem = n mod x in
+          let quot', rem' = loop x rem in
+          (rem', quot' - (rem' * quot))
     in
     snd (loop modulus x)
 
-  let pred x =
-    of_int (x - 1)
+  let pred x = of_int (x - 1)
 
-  let succ x =
-    of_int (x + 1)
+  let succ x = of_int (x + 1)
 
-  let add a b =
-    of_int (a + b)
+  let add a b = of_int (a + b)
 
-  let (+) a b =
-    add a b
+  let ( + ) a b = add a b
 
-  let sub a b =
-    of_int (a - b)
+  let sub a b = of_int (a - b)
 
-  let (-) a b =
-    sub a b
+  let ( - ) a b = sub a b
 
-  let mul a b =
-    of_int (a * b)
+  let mul a b = of_int (a * b)
 
-  let ( * ) a b =
-    mul a b
+  let ( * ) a b = mul a b
 
-  let div a b =
-    of_int (a * mul_inv b)
+  let div a b = of_int (a * mul_inv b)
 
-  let (/) a b =
-    div a b
+  let ( / ) a b = div a b
 
-  let pow a b =
-    of_float (float_of_int a ** float_of_int b)
+  let pow a b = of_float (float_of_int a ** float_of_int b)
 
-  let ( ** ) a b =
-    pow a b
+  let ( ** ) a b = pow a b
 
   let rem a b =
-    ignore (mul_inv b); (* throws in case of no inverse *)
+    ignore (mul_inv b) ;
+    (* throws in case of no inverse *)
     0
 end
