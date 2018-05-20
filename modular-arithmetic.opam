@@ -4,7 +4,9 @@ version: "0.1"
 maintainer: "Raphael Sousa Santos <contact@raphaelss.com>"
 authors: "Raphael Sousa Santos <contact@raphaelss.com>"
 license: "MPL-2.0"
-homepage: "github.com/sonologico/modular-arithmetic"
+homepage: "https://github.com/sonologico/modular-arithmetic"
+bug-reports: "https://github.com/sonologico/modular-arithmetic/issues"
+dev-repo: "git+https://github.com/sonologico/modular-arithmetic.git"
 build: [
   [make]
 ]
