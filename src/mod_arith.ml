@@ -50,6 +50,8 @@ module type Mod_int = sig
 
   val max_int : t
 
+  val neg : t -> t
+
   val min : t -> t -> t
 
   val max : t -> t -> t
@@ -117,6 +119,8 @@ module Make (M : Modulus) : Mod_int = struct
 
   let max_int = minus_one
 
+  let neg x = of_int (-x)
+
   let min a b = if a < b then a else b
 
   let max a b = if a > b then a else b
@@ -126,10 +130,10 @@ module Make (M : Modulus) : Mod_int = struct
       | 0 -> raise (No_mul_inverse (x, modulus))
       | 1 -> (0, 1)
       | x ->
-          let quot = n / x in
-          let rem = n mod x in
-          let quot', rem' = loop x rem in
-          (rem', quot' - (rem' * quot))
+        let quot = n / x in
+        let rem = n mod x in
+        let quot', rem' = loop x rem in
+        (rem', quot' - (rem' * quot))
     in
     snd (loop modulus x)
 
